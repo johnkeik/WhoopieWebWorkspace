@@ -1,0 +1,16 @@
+<div class="input-container">
+    <input 
+        class="front" 
+        [ngClass]="{'focused' : focused() || value, 'invalid': invalid()}"
+        [type]="finalInputType" 
+        [(ngModel)]="value"
+        (ngModelChange)="onModelChange($event)" 
+        (focus)="focused.set(true)" 
+        (blur)="focused.set(false)"
+        (keypress)="onKeyPress($event)"
+        [id]="inputId"
+        [maxlength]="maxLength()"
+        [disabled]="disableInput()"
+    />    
+    <label [ngClass]="{'required': required(), 'focused': focused() || value}" [for]="inputId">{{placeholder()}}</label>
+</div>

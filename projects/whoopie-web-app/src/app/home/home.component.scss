@@ -1,0 +1,225 @@
+@import "../../design/mixins/media-queries";
+
+:host {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        flex-direction: row;
+    }
+}
+
+.first-container {
+    background-color: var(--dark-background);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 0px 32px 44px 32px;
+
+
+    .logo-wrapper {
+        height: 150px;
+        padding-top: 30px;
+        width: 100%;
+        max-width: 500px;
+
+        @include laptop {
+            height: 250px;
+            max-width: 600px;
+        }
+    }
+
+    @include tablet {
+        width: 70%;
+        padding: 0 225px 0 44px;
+
+    }
+
+
+
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        color: var(--light-text);
+        justify-content: center;
+        align-items: start;
+        padding-top: 88px;
+        max-width: 500px;
+        z-index: 2;
+
+        @include laptop {
+            max-width: 600px;
+        }
+
+        @include tablet {
+            align-items: start;
+            justify-content: start;
+
+        }
+
+
+        .title {
+            font-size: var(--font-size-xl);
+            font-family: 'Baloo-Regular';
+            color: var(--primary-dark);
+
+            @include tablet {
+                font-size: 4rem;
+
+            }
+        }
+
+        .title-description {
+            margin-top: 16px;
+        }
+
+
+
+    }
+
+    .skills-container {
+        display: flex;
+        gap: 16px;
+        color: var(--light-text);
+        font-size: var(--font-size-small);
+        margin-top: 88px;
+        max-width: 500px;
+        z-index: 2;
+
+        @include tablet {
+            max-width: 500px;
+        }
+
+        @include laptop {
+            max-width: 600px;
+        }
+
+    }
+}
+
+.second-container {
+    background-color: var(--light-background-darker);
+    min-height: 100%;
+    display: flex;
+    padding: 24px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 88px 32px;
+
+    @include tablet {
+        width: 30%;
+    }
+
+
+
+
+}
+
+.image-container-wrapper {
+    position: relative;
+    width: 250px;
+
+    @include tablet {
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        left: 0;
+        transform: translateX(-50%);
+    }
+
+
+    .image-container {
+        width: 250px;
+        height: 250px;
+        background-color: var(--light-background);
+        z-index: 2;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        @include tablet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .image-frame {
+        width: 250px;
+        height: 250px;
+        border: 1px solid var(--light-text);
+        position: absolute;
+        top: calc(50% + 25px);
+        left: calc(50% + 35px);
+        transform: translate(-50%, -50%);
+        z-index: 1;
+
+    }
+
+    .dark-grid {
+        position: absolute;
+        top: 70%;
+        right: -35%;
+
+        @include tablet {
+            top: 60%;
+            right: -5%;
+
+        }
+    }
+
+    .light-grid {
+        position: absolute;
+        top: -15%;
+        left: -35%;
+
+        @include tablet {
+            top: 5%;
+            left: -5%;
+
+        }
+
+    }
+
+    .vector-line-dark {
+        position: absolute;
+        top: 30%;
+        right: -45%;
+
+        @include tablet {
+            top: 30%;
+            right: -10%;
+        }
+    }
+
+    .vector-primary-1 {
+        position: absolute;
+        top: 50%;
+        left: -10%;
+
+        @include tablet {
+            top: 50%;
+            left: 10%;
+        }
+    }
+
+    .vector-primary-2 {
+        position: absolute;
+        bottom: -20%;
+        left: -20%;
+
+        @include tablet {
+            bottom: 10%;
+            left: 0;
+        }
+    }
+}

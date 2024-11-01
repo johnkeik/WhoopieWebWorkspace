@@ -1,0 +1,74 @@
+.block {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    position: absolute;
+}
+
+.blocks-container {
+    width: 500px;
+    height: 400px;
+    position: relative;
+}
+
+.block1 {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+.block2 {
+    bottom: 35px;
+    left: 235px;
+    transform: rotate(19deg);
+    position: absolute;
+}
+
+.block3 {
+    bottom: 107px;
+    left: 220px;
+    transform: rotate(19deg);
+    position: absolute;
+    z-index: 2;
+}
+
+.block4 {
+    position: absolute;
+    bottom: 123px;
+    transform: rotate(-35deg);
+    z-index: 3;
+    left: 3px;
+
+}
+
+.block5 {
+    position: absolute;
+    left: 176px;
+    bottom: 199px;
+    transform: rotate(25deg);
+    z-index: 1;
+
+}
+
+.get-started {
+    background-color: #EE5A22;
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+    bottom: 63px;
+    padding: 0.3rem;
+    left: 125px;
+
+
+    span {
+        font-size: 1rem;
+        line-height: 1rem;
+        height: 1rem;
+    }
+
+}

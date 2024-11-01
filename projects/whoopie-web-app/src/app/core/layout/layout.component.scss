@@ -1,0 +1,51 @@
+@import "../../../design/mixins/media-queries";
+
+:host {
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+}
+
+.q-right {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    transform: translate(-50%, -55%);
+    scale: 1.5;
+    display: none;
+    z-index: 1;
+
+    @include tablet {
+        display: block;
+    }
+}
+
+
+.q-left-wrapper {
+    position: absolute;
+    top: 300vh;
+    right: 0;
+    transform: translate(25%, -20%);
+    scale: 1.2;
+    display: none;
+    z-index: 1;
+
+    @include tablet {
+        display: block;
+    }
+
+    .q-left {
+
+    }
+
+    .grid-primary {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -90%);
+        left: 50%;
+    }
+}
+
+.screen {
+    min-height: 100vh;
+}

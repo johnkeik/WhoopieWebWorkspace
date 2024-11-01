@@ -1,0 +1,40 @@
+$screen-xs: 480px;  // Small mobile (portrait phones)
+$screen-sm: 768px;  // Tablets (portrait and landscape for small tablets)
+$screen-md: 992px;  // Small laptops or larger tablets
+$screen-lg: 1200px; // Standard desktops
+$screen-xl: 1440px; // Large desktop screens
+
+// Small Mobile (up to larger mobile devices)
+@mixin xs-mobile {
+  @media (min-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+// Tablets and up
+@mixin tablet {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+// Laptops and larger tablets
+@mixin laptop {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// Standard desktops
+@mixin desktop {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// Large desktops and ultra-wide screens
+@mixin desktop-large {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}

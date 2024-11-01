@@ -1,0 +1,22 @@
+@import "./mixins/media-queries";
+
+:root {
+    --primary: #FF711F;
+    --primary-dark: #EE5A22;
+    --dark-text: #333848;
+    --light-text: #FFF4EE;
+    --dark-background: #333848;
+    --light-background-darker: #FFCDB0;
+    --light-background: #FFF4EE;
+
+    --white: #fff; 
+
+    --error: red;
+
+
+
+    --font-size-small: 0.875rem;
+    --font-size-regular: 1rem;
+    --font-size-large: 2rem;
+    --font-size-xl: 3rem;
+}

@@ -1,0 +1,5 @@
+@mixin anyPointer {
+    @media (any-pointer: fine) {
+        @content;
+    }
+}

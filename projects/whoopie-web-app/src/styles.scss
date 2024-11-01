@@ -1,0 +1,99 @@
+// IMPORTANT: The order of imports defines specificity. Last import has higher specificity
+@import './assets/styles/normalize.css';
+@import './design/mixins/media-queries.scss';
+@import './design/mixins/spacing-generators.scss';
+@import './design/custom.scss';
+
+
+/* You can add global styles to this file, and also import other style files */
+* {
+    scroll-behavior: smooth;
+    /* Safari */
+    -webkit-user-select: none;
+    /* IE 10 and IE 11 */
+    -ms-user-select: none;
+    /* Standard syntax */
+    user-select: none;
+    // cursor: none;
+}
+
+body {
+    font-family: "Roboto-Mono", monospace;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}
+// button,
+// a {
+//     cursor: none;
+// }
+
+img {
+    pointer-events: none;
+}
+
+@font-face {
+    font-family: 'Baloo-Regular';
+    src: url('assets/fonts/Baloo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+.centered-background-text {
+    font-family: "Londrina Shadow", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 12rem;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    color: #f3f3f3;
+
+    @include xs-mobile {
+        font-size: 10rem;
+    }
+}
+
+.cursor-ball {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-dark);
+    border: 1px solid white;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 101;
+    pointer-events: none;
+}
+
+.cursor-outline {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--primary-dark);
+    top: 0;
+    left: 0;
+    transition: all 0.1s ease;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+
+
+}
+
+.cursor-ball,
+.cursor-outline {
+    display: none;
+
+    @include anyPointer {
+        display: block;
+        pointer-events: none;
+    }
+}

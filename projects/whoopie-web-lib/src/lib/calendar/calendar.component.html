@@ -1,0 +1,63 @@
+<div class="main-wrapper">
+    <div class="header row">
+      <button (click)="prevMonth()" aria-label="Decrement Month">
+        <!-- <cwo-icon class="arrow" [name]="arrowIcon"  alt="Decrement Month" /> -->
+      </button>
+      <span class="header-text" role='contentinfo' [attr.aria-label]="selectedDateLabel.desc" >{{ selectedDateLabel.text }}</span>
+      <button (click)="nextMonth()" aria-label="Increment Month">
+        <!-- <cwo-icon class="arrow right" [name]="arrowIcon" alt="Increment Month" /> -->
+      </button>
+    </div>
+    <div class="row row-days">
+      <div role='contentinfo' class="cell cell-days" [attr.aria-label]="day.long"  *ngFor="let day of DAYS">
+        {{ day.sort }}
+      </div>
+    </div>
+    <div class="content">
+      <div class="row" *ngFor="let row of calendarDays; let i = index">
+        <div class="cell" [ngClass]="{ 
+            'selected': date.selected ,
+            'today':date.today && !date.selected,
+            'other-month': date.otherMonth
+            }" *ngFor="let date of row; let j = index">
+          <button 
+            [id]="date.id" 
+            [tabindex]="date.selected?0:-1" 
+            (click)="chooseDate(i, j)"
+            (focus)="dateFocusedIn()" 
+            (blur)="dateFocusedOut()"
+            [attr.aria-label]="
+            (date.getDate() + 'of' + MONTHS[date.getMonth()].long) + 
+            (date.selected?' selected':'') +
+            (date.today?' which is today':'') +
+            (date.evented?' day has events':'')
+            "
+          >
+            {{ date.getDate() }}
+          </button>
+          <div *ngIf="date.evented" class="event-bubble" [ngClass]="{'orange-dot':!date.selected}"></div>
+        </div>
+      </div>
+    </div>
+    <div class="events-wrapper" *ngIf="eventsOfSelectedDate.length > 0">
+      <div 
+        class="event-row" 
+        tabindex="0" 
+        [ariaLabel]="'Event with title:'+event.title+' for selected date'" *ngFor="let event of eventsOfSelectedDate"
+      >
+        <div class="event-row-bubble"></div>
+        <span class="event-date">
+          {{event.date.getMonth()+1+'/'+event.date.getDate()}}
+        </span>
+        <span class="event-title">{{event.title}}</span>
+      </div>
+    </div>
+    <div class="footer" *transloco="let t">
+      <button class="cancel-btn" (click)="cancelClicked()">
+        {{t("calendar_component.cancel")}}
+      </button>
+      <button class="apply-btn" (click)="applyBtnClicked()">
+        {{t("calendar_component.apply")}}
+      </button>
+    </div>
+  </div>
