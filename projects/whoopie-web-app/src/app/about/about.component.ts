@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MovingBannerComponent } from '../shared/moving-banner/moving-banner.component';
-import { gsap } from 'gsap/gsap-core';
-import { ScrollTrigger } from 'gsap/all';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-about',
   standalone: true,

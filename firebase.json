@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "./dist/whoopie-web-app/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

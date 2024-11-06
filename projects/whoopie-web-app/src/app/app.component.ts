@@ -13,4 +13,5 @@ import { CalendarComponent } from 'whoopie-web-lib';
 })
 export class AppComponent {
   title = 'whoopie-web-app';
+
 }

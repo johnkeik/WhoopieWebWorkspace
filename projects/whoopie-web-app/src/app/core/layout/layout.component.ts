@@ -14,8 +14,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ServicesComponent } from '../../services/services.component';
 import { Location } from '@angular/common';
 import { ActiveSectionHandlerService } from '../services/active-section-handler.service';
-import { gsap } from 'gsap';
-import { Xmb } from '@angular/compiler';
 import { BuildingBlocksComponent } from '../../shared/building-blocks/building-blocks.component';
 import { ContactComponent } from '../../contact/contact.component';
 

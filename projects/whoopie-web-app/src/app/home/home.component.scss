@@ -31,6 +31,10 @@
             height: 250px;
             max-width: 600px;
         }
+
+        .logo {
+            width: 120px;
+        }
     }
 
     @include tablet {
@@ -47,7 +51,7 @@
         color: var(--light-text);
         justify-content: center;
         align-items: start;
-        padding-top: 88px;
+        padding-top: 30px;
         max-width: 500px;
         z-index: 2;
 
@@ -66,6 +70,7 @@
             font-size: var(--font-size-xl);
             font-family: 'Baloo-Regular';
             color: var(--primary-dark);
+            letter-spacing: -1px;
 
             @include tablet {
                 font-size: 4rem;

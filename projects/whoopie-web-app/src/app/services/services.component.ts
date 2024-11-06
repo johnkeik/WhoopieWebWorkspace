@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ScrollTrigger } from 'gsap/all';
-import { gsap } from 'gsap/gsap-core';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 @Component({
   selector: 'app-services',
   standalone: true,
@@ -12,8 +12,7 @@ export class ServicesComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger)
 
     gsap.from(".article-text-1", {
       scale: 0,

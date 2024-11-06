@@ -2,7 +2,7 @@ import { AfterContentInit, AfterViewInit, Component, HostListener, inject } from
 import { RouterLink } from '@angular/router';
 import { ActiveSectionHandlerService } from '../services/active-section-handler.service';
 import { CommonModule } from '@angular/common';
-import { gsap } from 'gsap/gsap-core';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-header',

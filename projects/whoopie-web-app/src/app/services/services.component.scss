@@ -71,7 +71,7 @@
             .vector-line-2-wrapper {
                 position: absolute;
                 bottom: 0;
-                left: 0%;
+                left: -50px;
                 scale: 2;
 
 
@@ -105,8 +105,8 @@
 
             .grid-icon-wrapper {
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: -70px;
+                right: -70px;
 
 
                 @include tablet {
