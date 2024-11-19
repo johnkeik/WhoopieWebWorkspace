@@ -1,4 +1,4 @@
-@import "../../design/mixins/media-queries";
+@import "../../../design/mixins/media-queries";
 
 :host {
     min-height: 100vh;
@@ -205,6 +205,8 @@
             right: -10%;
         }
     }
+
+
 
     .vector-primary-1 {
         position: absolute;

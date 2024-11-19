@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InputComponent } from '../shared/input/input.component';
+import { InputComponent } from '../../shared/input/input.component';
 
 @Component({
   selector: 'app-contact',

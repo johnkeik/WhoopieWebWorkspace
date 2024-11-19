@@ -1,18 +1,18 @@
 <div class="header" [ngClass]="{hide: !isNavbarVisible}">
-    <a class="nav-links" routerLink="/home"  [ngClass]="{'active' : activeSection() === 'home', 'light-colored': showLightColor()}">
+    <button class="nav-links" (click)="setActive('home')" [ngClass]="{'active' : activeSection() === 'home', 'light-colored': showLightColor()}">
         <div class="dash" [ngClass]="{'active' : activeSection() === 'home', 'light-colored': showLightColor()}"></div>
         Home
-    </a>
-    <a class="nav-links" routerLink="/services" [ngClass]="{'active' : activeSection() === 'services', 'light-colored': showLightColor()}">
+    </button>
+    <button class="nav-links" (click)="setActive('services')" [ngClass]="{'active' : activeSection() === 'services', 'light-colored': showLightColor()}">
         <div class="dash" [ngClass]="{'active' : activeSection() === 'services', 'light-colored': showLightColor()}"></div>
         Services
-    </a>
-    <a class="nav-links" routerLink="/about" [ngClass]="{'active' : activeSection() === 'about', 'light-colored': showLightColor()}">
+    </button>
+    <button class="nav-links" (click)="setActive('about')" [ngClass]="{'active' : activeSection() === 'about', 'light-colored': showLightColor()}">
         <div class="dash" [ngClass]="{'active' : activeSection() === 'about', 'light-colored': showLightColor()}"></div>
         About
-    </a>
-    <a class="nav-links" routerLink="/contact" [ngClass]="{'active' : activeSection() === 'contact', 'light-colored': showLightColor()}">
+    </button>
+    <button class="nav-links" (click)="setActive('contact')" [ngClass]="{'active' : activeSection() === 'contact', 'light-colored': showLightColor()}">
         <div class="dash" [ngClass]="{'active' : activeSection() === 'contact', 'light-colored': showLightColor()}"></div>
         Contact
-    </a>
+    </button>
 </div>

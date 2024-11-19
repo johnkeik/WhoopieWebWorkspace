@@ -1,9 +1,9 @@
 @import "../../../design/mixins/media-queries";
 
 :host {
-   display: flex;
-   flex-direction: column;
-   overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .q-right {
@@ -25,27 +25,60 @@
     position: absolute;
     top: 300vh;
     right: 0;
-    transform: translate(25%, -20%);
+    transform: translate(36%, 10%);
     scale: 1.2;
     display: none;
     z-index: 1;
+    width: 600px;
+    height: 700px;
 
     @include tablet {
         display: block;
     }
 
-    .q-left {
+    .grid-wrapper {
+        position: absolute;
+        top: 23%;
+        left: 40%;
+        height: 140px;
+        width: 140px;
 
+        .grid-primary {
+            position: absolute;
+            height: 140px;
+            width: 140px;
+            animation: rotate 5s linear infinite;
+        }
     }
 
-    .grid-primary {
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -90%);
-        left: 50%;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
     }
 }
 
 .screen {
     min-height: 100vh;
+}
+
+.hint-wrapper {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+}
+
+.test-div {
+    position: absolute;
+    top: 0;
+    left:400px;
+    z-index: -1;
+    display: flex;
+}
+
+.about-pages {
+    width:fit-content;
+	display:flex;
+	flex-wrap:nowrap;
 }

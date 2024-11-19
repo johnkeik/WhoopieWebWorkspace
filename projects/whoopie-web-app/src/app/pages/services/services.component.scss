@@ -1,0 +1,138 @@
+@import '../../../design/mixins/media-queries';
+
+:host {
+    height: 100%;
+    background-color: var(--light-background-darker);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 150px 25px;
+
+    @include laptop {
+        flex-direction: row;
+    }
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include laptop {
+        padding-top: 300px;
+    }
+}
+
+.article {
+    position: relative;
+    min-width: min(500px, 90vw);
+    max-width: 500px;
+    z-index: 2;
+
+    .title {
+        font-family: 'Baloo-Regular';
+        font-size: var(--font-size-large);
+
+        @include tablet {
+            font-size: var(--font-size-xl);
+        }
+    }
+
+    &.partner-with-me {
+        .circles {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+        }
+    }
+
+    &.choose {
+        grid-column-start: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+        .vector-line-1 {
+            position: absolute;
+            top: -30px;
+            scale: 1.5;
+            transform: rotate(15deg);
+            right: 50%;
+
+            @include tablet {
+                top: -60px;
+                scale: 2;
+                transform: rotate(15deg);
+                right: 50%;
+            }
+        }
+
+        .vector-line-2-wrapper {
+            position: absolute;
+            bottom: 0;
+            left: -50px;
+            scale: 2;
+
+
+            @include tablet {
+                left: auto;
+                right: 60%;
+                bottom: -100px;
+                scale: 3;
+
+            }
+
+            .vector-line-2 {
+                transform: rotate(20deg);
+
+                @include tablet {
+                    transform: rotate(100deg);
+
+                }
+            }
+
+
+
+
+        }
+
+    }
+
+    &.my-story {
+        grid-column-start: 1;
+        grid-row-start: 3;
+
+        .grid-icon-wrapper {
+            position: absolute;
+            top: -70px;
+            right: -70px;
+
+
+            @include tablet {
+                top: -120px;
+                right: 50px;
+            }
+
+            .grid-icon {
+                transform: rotate(45deg);
+
+                @include tablet {
+                    transform: rotate(30deg);
+                }
+            }
+
+        }
+    }
+}
+
+.avatar-img {
+    max-width: 500px;
+    width: 100%;
+}

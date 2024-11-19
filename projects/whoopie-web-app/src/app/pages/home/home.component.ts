@@ -1,16 +1,14 @@
 import {
-  AfterViewChecked,
   AfterViewInit,
   Component,
   inject,
 } from '@angular/core';
-import { BuildingBlocksComponent } from '../shared/building-blocks/building-blocks.component';
-import { MovingBannerComponent } from '../shared/moving-banner/moving-banner.component';
-import { ActiveSectionHandlerService } from '../core/services/active-section-handler.service';
+import { ActiveSectionHandlerService } from '../../core/services/active-section-handler.service';
+import { gsap } from 'gsap';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MovingBannerComponent, BuildingBlocksComponent],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -34,7 +32,7 @@ export class HomeComponent implements AfterViewInit {
         });
       },
       {
-        threshold: 0,
+        threshold: 0.5,
       }
     );
 
