@@ -4,13 +4,14 @@ import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/all';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslocoPipe],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -18,6 +19,7 @@ export class HeaderComponent implements AfterContentInit {
   activeSection = inject(ActiveSectionHandlerService).activeSection;
   showLightColor = inject(ActiveSectionHandlerService).showLightColor;
   activeSerctionHandlerService = inject(ActiveSectionHandlerService);
+  translocoService = inject(TranslocoService);
   isNavbarVisible = true;
   private previousScrollPosition = window.scrollY;
 
@@ -85,4 +87,7 @@ export class HeaderComponent implements AfterContentInit {
   return pin && pin.isActive ? el.offsetHeight : 0; // Adjust based on pinning state
 }
 
+changeLanguage(lang: 'en' | 'gr') {
+  this.translocoService.setActiveLang(lang);
+}
 }

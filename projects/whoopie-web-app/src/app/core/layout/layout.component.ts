@@ -1,15 +1,12 @@
-import { Location } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   inject
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { gsap } from 'gsap';
-import { ContactComponent } from '../../pages/contact/contact.component';
-import { HomeComponent } from '../../pages/home/home.component';
-import { ServicesComponent } from '../../pages/services/services.component';
-import { ValuesComponent } from '../../values/values.component';
+import { ContactComponent } from '../../pages/home/contact/contact.component';
+import { HomeComponent } from '../../pages/home/home/home.component';
+import { ServicesComponent } from '../../pages/home/services/services.component';
+import { ValuesComponent } from '../../pages/home/values/values.component';
 import { HeaderComponent } from '../header/header.component';
 import { ActiveSectionHandlerService } from '../services/active-section-handler.service';
 import { LayoutGsapAnimationsService } from './animations/layout-gsap-animations-service';
@@ -23,8 +20,7 @@ import { LayoutGsapAnimationsService } from './animations/layout-gsap-animations
     HeaderComponent,
     ServicesComponent,
     ContactComponent,
-    ValuesComponent
-  
+    ValuesComponent,
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
@@ -35,62 +31,12 @@ export class LayoutComponent implements AfterViewInit {
   gsapAnimationsService = inject(LayoutGsapAnimationsService)
   maskSize = 40;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private location: Location
-  ) {
-    this.initCursorListeners();
-  }
-
-
-
   ngAfterViewInit(): void {
     this.setupIntersectionObserver();
-
     this.gsapAnimationsService.initGsapAnimations();
-
-    
-
-    
   }
 
-
-
-  initCursorListeners() {
-    // Track the mouse position and update cursor elements
-    document.addEventListener('mousemove', (e: MouseEvent) => {
-      gsap.to('.cursor-ball', {
-        x: e.clientX,
-        y: e.clientY,
-        ease: 'power2.out', // Smooth easing for animation
-      });
-      gsap.to('.cursor-outline', {
-        x: e.clientX,
-        y: e.clientY,
-      });
-    });
-
-    // Animate cursor outline on mousedown (left-click)
-    document.addEventListener('mousedown', (e: MouseEvent) => {
-      if (e.button === 0) {
-        gsap.to('.cursor-outline', {
-          width: 24,
-          height: 24,
-          backgroundColor: '#EE5A22',
-        });
-      }
-    });
-
-    // Reset cursor outline on mouseup
-    document.addEventListener('mouseup', () => {
-      gsap.to('.cursor-outline', {
-        width: 48,
-        height: 48,
-        backgroundColor: 'transparent',
-      });
-    });
-  }
+  
   setupIntersectionObserver() {
     this.observer = new IntersectionObserver(
       (entries) => {
@@ -108,10 +54,8 @@ export class LayoutComponent implements AfterViewInit {
 
     setTimeout(() => {
       const sectionIDs = ['home', 'about', 'contact'];
-      // Ensure elements are in the DOM before observing
       sectionIDs.forEach((el) => {
         const element = document.getElementById(el);
-        console.log(element)
         if (element) {
           this.observer?.observe(element);
         }

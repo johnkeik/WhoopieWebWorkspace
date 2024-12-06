@@ -1,4 +1,4 @@
-@import '../../../design/mixins/media-queries';
+@import "../../../../design/mixins/media-queries";
 
 :host {
     height: 100%;
@@ -36,6 +36,16 @@
     min-width: min(500px, 90vw);
     max-width: 500px;
     z-index: 2;
+
+    @include laptop {
+        min-width: min(400px, 90vw);
+        max-width: 400px;
+    }
+
+    @include desktop {
+        min-width: min(500px, 90vw);
+        max-width: 500px;
+    }
 
     .title {
         font-family: 'Baloo-Regular';
@@ -135,4 +145,5 @@
 .avatar-img {
     max-width: 500px;
     width: 100%;
+    z-index: 4;
 }

@@ -14,7 +14,7 @@
     -ms-user-select: none;
     /* Standard syntax */
     user-select: none;
-    cursor: none;
+    cursor: url('./assets/images/cursor.png'), auto;
 }
 
 body {
@@ -37,6 +37,12 @@ img {
 @font-face {
     font-family: 'Baloo-Regular';
     src: url('assets/fonts/Baloo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ubuntu-Bold';
+    src: url('assets/fonts/Ubuntu-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

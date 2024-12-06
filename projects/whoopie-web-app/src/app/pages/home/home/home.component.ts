@@ -3,7 +3,7 @@ import {
   Component,
   inject,
 } from '@angular/core';
-import { ActiveSectionHandlerService } from '../../core/services/active-section-handler.service';
+import { ActiveSectionHandlerService } from '../../../core/services/active-section-handler.service';
 import { gsap } from 'gsap';
 @Component({
   selector: 'app-home',

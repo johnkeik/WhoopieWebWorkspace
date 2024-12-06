@@ -1,4 +1,4 @@
-@import "../../../design/mixins/media-queries";
+@import "../../../../design/mixins/media-queries";
 
 :host {
     height: 100%;
@@ -41,7 +41,7 @@
     width: 100%;
     gap: 16px;
     z-index: 2;
-
+    min-width: min(500px, 90vw);
 
     .contact-information-inputs-wrapper {
         display: flex;
@@ -63,7 +63,7 @@
             background-color: var(--light-background);
         }
     }
-    
+
     .email {
         font-size: 0.875rem;
         width: 100%;
@@ -76,7 +76,7 @@
         max-width: 200px;
         font-size: 1rem;
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         gap: 16px;
         background-color: var(--light-background);
@@ -86,58 +86,64 @@
         font-weight: 'Baloo-Regular';
         font-weight: bold;
         position: relative;
-        padding-left: 60px;
 
-        // And from the left
         &:hover {
             box-shadow: inset 300px 0 0 0 var(--light-background-darker);
-
-            .arrow-wrapper {
-                .arrow {
-                    width: 220px;
-                }
-
-            }
         }
 
-        // And from the left
         &:focus {
             box-shadow: inset 300px 0 0 0 var(--light-background-darker);
-
-            .arrow-wrapper {
-                .arrow {
-                    width: 220px;
-
-                }
-            }
-        }
-
-
-        .arrow-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            left: 70%;
-
-            .arrow {
-                width: 20px;
-                transition: all 0.4s ease-in-out;
-                height: 2px;
-                background-color: black;
-            }
-
-
-            .arrow-point {
-                border-bottom: 6px solid transparent;
-                border-top: 6px solid transparent;
-
-                border-left: 6px solid black;
-
-            }
-
-
         }
     }
+
+}
+
+.coming-soon-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+    .announcement-wrapper {
+        display: flex;
+        min-width: min(500px, 90vw);
+        max-width: 500px;
+        flex-direction: column;
+        color: var(--dark-text);
+
+        .title {
+            font-size: var(--font-size-large);
+            line-height: 2rem;
+            font-family: 'Baloo-Regular';
+        }
+
+        .description {
+            display: none;
+
+            @include tablet {
+                display: flex;
+            }
+        }
+    }
+
+    .mobile-animation-wrapper {
+        display: flex;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    .desktop-animation-wrapper {
+        display: none;
+
+        @include tablet {
+            display: flex;
+        }
+    }
+
 
 }

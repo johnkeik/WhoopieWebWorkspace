@@ -1,9 +1,13 @@
-@import "../../design/mixins/media-queries";
+@import "../../../../design/mixins/media-queries";
 
 :host {
     width: fit-content;
     display: flex;
     background-color: var(--light-background);
+}
+
+.values-container-wrapper {
+    padding: 0 150px;
 }
 
 .values-container {
@@ -13,10 +17,10 @@
     column-gap: 150px;
     width: fit-content;
     flex-wrap: nowrap;
-    padding: 30vh 50px 150px 50px;
+    padding: 30vh 350px 150px 50px;
 
     @include tablet {
-        padding: 300px 150px;
+        padding: 300px 400px 300px 150px;
     }
 
     .title-wrapper {
@@ -49,6 +53,7 @@
     flex-direction: column;
     gap: 8px;
     position: relative;
+
 }
 
 .tailored-designs-wrapper {

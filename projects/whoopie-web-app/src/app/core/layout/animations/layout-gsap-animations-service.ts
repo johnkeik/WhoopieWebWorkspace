@@ -75,7 +75,7 @@ export class LayoutGsapAnimationsService {
         scrollTrigger: {
           trigger: '.choose-unique',
           start: () => `top 90%`,
-          end: 'top 50%',
+          end: 'top 80%',
           scrub: 2,
         },
       },
@@ -91,7 +91,7 @@ export class LayoutGsapAnimationsService {
         scrollTrigger: {
           trigger: '.choose-unique',
           start: () => `top 90%`,
-          end: 'top 50%',
+          end: 'top 80%',
           scrub: 4,
         },
       },
@@ -109,7 +109,7 @@ export class LayoutGsapAnimationsService {
         scrollTrigger: {
           trigger: '.my-story',
           start: () => `top 90%`,
-          end: 'top 50%',
+          end: 'top 80%',
           scrub: 2,
         },
       },
@@ -127,7 +127,7 @@ export class LayoutGsapAnimationsService {
         scrollTrigger: {
           trigger: '.partner-with-me',
           start: () => `top 90%`,
-          end: 'top 50%',
+          end: 'top 80%',
           scrub: 2,
         },
       },

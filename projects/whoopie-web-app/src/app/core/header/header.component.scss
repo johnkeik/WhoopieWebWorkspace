@@ -6,12 +6,12 @@
     flex-direction: column;
     gap: 1rem;
     position: fixed;
-    top:30px;
+    top: 30px;
     right: 40px;
     z-index: 12;
 
     @include tablet {
-        top:50px;
+        top: 50px;
         right: 80px;
     }
 
@@ -26,7 +26,7 @@
 
 button {
     font-family: "Luckiest Guy", cursive;
-    position: relative;   
+    position: relative;
     font-size: 1rem;
     line-height: 1rem;
     width: max-content;
@@ -36,7 +36,9 @@ button {
     box-shadow: none;
 }
 
-button, button:hover, button:active {
+button,
+button:hover,
+button:active {
     color: var(--dark-text);
     text-decoration: none;
 
@@ -50,8 +52,6 @@ button, button:hover, button:active {
 
     &.active {
         color: var(--primary-dark);
-
-
     }
 }
 
@@ -72,10 +72,32 @@ button, button:hover, button:active {
             background-color: var(--dark-text);
         }
     }
+
     &.active {
         transform: translateY(-50%) scaleX(1);
 
     }
-    transition: all 0.3s ease-in-out, visibility 0s;
 
+    transition: all 0.3s ease-in-out,
+    visibility 0s;
+
+}
+
+.languages-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    .lang {
+        display: flex;
+        height: 28px;
+        width: 28px;
+
+        &.active {
+            outline: 2px solid var(--dark-text);
+            outline-offset: 2px;
+            border-radius: 100%;
+        }
+    }
 }

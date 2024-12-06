@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { AnimationOptions, LottieComponent } from 'ngx-lottie';
 
 @Component({
-  selector: 'app-hint-animation',
+  selector: 'app-loading-hand',
   standalone: true,
   imports: [LottieComponent],
-  templateUrl: './hint-animation.component.html',
-  styleUrl: './hint-animation.component.scss'
+  templateUrl: './loading-hand.component.html',
+  styleUrl: './loading-hand.component.scss'
 })
-export class HintAnimationComponent {
+export class LoadingHandComponent {
   options: AnimationOptions = {
-    path: '/assets/images/hint-animation.json',
+    path: '/assets/animations/loading-hand.json',
     loop: true,
     autoplay: true
   };
