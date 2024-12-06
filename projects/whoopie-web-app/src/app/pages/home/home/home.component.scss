@@ -33,7 +33,12 @@
         }
 
         .logo {
-            width: 120px;
+            width: 120px;  
+            visibility: hidden;
+
+            @include tablet {
+                visibility: visible;
+            }
         }
     }
 
