@@ -1,33 +1,33 @@
-<div class="informative-text-wrapper">
+<div class="informative-text-wrapper" *transloco="let t">
     <span class="title">
-        Send me a message!
+        {{t('home.contact.send_me_a_message_title')}}
     </span>
     <span class="description">
-        Got a question or proposal, or just want to say hello? Go ahead.
+        {{t('home.contact.send_me_a_message_description')}}
     </span>
 
 
 </div>
-<div class="form-container">
+<div class="form-container" *transloco="let t">
     <div class="contact-information-inputs-wrapper">
-        <app-input [type]="'text'" [placeholder]="'Name'" [required]="true" />
-        <app-input [type]="'text'" [placeholder]="'Email'" [required]="true" />
+        <app-input [type]="'text'" [placeholder]="t('home.contact.name_placeholder')" [required]="true" />
+        <app-input [type]="'text'" [placeholder]="t('home.contact.email_placeholder')" [required]="true" />
     </div>
     <textarea class="text-area" name="" id=""
-        [placeholder]="'Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?'"></textarea>
+        [placeholder]="t('home.contact.textarea_placeholder')"></textarea>
         <span class="email">{{"john.keikoglou@gmail.com"}}</span>
     <button class="submit-button">
-        <span class="title">SHOOT</span>
+        <span class="title">{{t('home.contact.shoot_button_title')}}</span>
     </button>
 </div>
 
-<div class="coming-soon-wrapper">
+<div class="coming-soon-wrapper" *transloco="let t">
     <div class="announcement-wrapper">
-        <span class="title">Are you a fellow developer? Welcome!</span>
-        <span class="description">There’s a spot for you here too.<br/> Stay tuned—our blog on web development tips and tricks is launching soon!</span>
+        <span class="title">{{t('home.contact.are_you_a_fellow_developer_title')}}</span>
+        <span class="description">{{t('home.contact.are_you_a_fellow_developer_description')}}</span>
     </div>
     <div class="mobile-animation-wrapper">
-        <span class="description">There’s a spot for you here too.<br/> Stay tuned—our blog on web development tips and tricks is launching soon!</span>
+        <span class="description">{{t('home.contact.are_you_a_fellow_developer_description')}}</span>
         <app-coming-soon />
     </div>
     <div class="desktop-animation-wrapper">

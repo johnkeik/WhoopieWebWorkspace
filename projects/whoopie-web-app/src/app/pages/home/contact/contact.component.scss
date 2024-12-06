@@ -22,7 +22,8 @@
 
     .title {
         font-size: var(--font-size-large);
-        font-family: 'Baloo-Regular';
+        font-family: 'Ubuntu-Bold';
+        font-weight: 900;
 
         @include tablet {
             font-size: var(--font-size-xl);
@@ -83,7 +84,8 @@
         border: 1px solid grey;
         height: 3rem;
         transition: all 0.3s ease-in-out;
-        font-weight: 'Baloo-Regular';
+        font-weight: 'Ubuntu-Bold';
+        font-weight: 900;
         font-weight: bold;
         position: relative;
 
@@ -117,7 +119,8 @@
         .title {
             font-size: var(--font-size-large);
             line-height: 2rem;
-            font-family: 'Baloo-Regular';
+            font-family: 'Ubuntu-Bold';
+            font-weight: 900;
         }
 
         .description {

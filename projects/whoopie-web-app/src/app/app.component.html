@@ -1,6 +1,5 @@
-@if(appStatus() === 'COMPLETE') {
-    <router-outlet/>
-} @else if (appStatus() === 'LOADING') {
+
+@if (appStatus() === 'LOADING' || loadingTransloco) {
     <div style="display: flex; flex-direction: column; width: 100%; height: 100vh; justify-content: center; align-items: center; background-color: var(--light-background);">
         <app-loading-hand />
         <div class="logo-wrapper">
@@ -9,5 +8,14 @@
     </div>
 }
 
+@if (appStatus() !== 'ERROR' && appStatus() !== 'LOADING') {
+    <router-outlet/>
+} 
 
+@if (appStatus() === 'ERROR') {
+    <div style="display: flex; align-items: center; flex-direction: column; padding: 3rem; z-index: 10000;">
+      <h1>Error Loading Content</h1>
+      <button (click)="reload()" class="button-accent">Reload Page</button>
+    </div>
+}
 <div class="cursor-outline"></div>

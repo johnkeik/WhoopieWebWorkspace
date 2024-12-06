@@ -5,10 +5,11 @@ import {
 } from '@angular/core';
 import { ActiveSectionHandlerService } from '../../../core/services/active-section-handler.service';
 import { gsap } from 'gsap';
+import { TranslocoDirective } from '@jsverse/transloco';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [TranslocoDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

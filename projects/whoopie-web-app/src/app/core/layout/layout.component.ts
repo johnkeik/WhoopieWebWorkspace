@@ -5,11 +5,11 @@ import {
 } from '@angular/core';
 import { ContactComponent } from '../../pages/home/contact/contact.component';
 import { HomeComponent } from '../../pages/home/home/home.component';
-import { ServicesComponent } from '../../pages/home/services/services.component';
 import { ValuesComponent } from '../../pages/home/values/values.component';
 import { HeaderComponent } from '../header/header.component';
 import { ActiveSectionHandlerService } from '../services/active-section-handler.service';
 import { LayoutGsapAnimationsService } from './animations/layout-gsap-animations-service';
+import { AboutComponent } from '../../pages/home/about/about.component';
 
 
 @Component({
@@ -18,7 +18,7 @@ import { LayoutGsapAnimationsService } from './animations/layout-gsap-animations
   imports: [
     HomeComponent,
     HeaderComponent,
-    ServicesComponent,
+    AboutComponent,
     ContactComponent,
     ValuesComponent,
   ],
@@ -33,7 +33,10 @@ export class LayoutComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.setupIntersectionObserver();
-    this.gsapAnimationsService.initGsapAnimations();
+    setTimeout(() => {
+      this.gsapAnimationsService.initGsapAnimations();
+
+    },0)
   }
 
   

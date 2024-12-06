@@ -30,13 +30,13 @@
     }
 
     .title {
-        font-family: 'Baloo-Regular';
+        font-family: 'Ubuntu-Bold';
         font-size: var(--font-size-large);
-        line-height: 2rem;
-        text-wrap: nowrap;
-
+        line-height: 2.2rem;
+        font-weight: 900;
         @include tablet {
             font-size: var(--font-size-xl);
+            line-height: 3rem;
         }
     }
 
@@ -53,6 +53,12 @@
     flex-direction: column;
     gap: 8px;
     position: relative;
+    max-width: 250px;
+    width: max-content;
+
+    @include tablet {
+        max-width: 550px;
+    }
 
 }
 

@@ -1,11 +1,11 @@
-<div class="left-container">
+<div class="left-container" *transloco="let t">
     <div class="article choose-unique">
         <div class="article-text-2">
             <div class="title">
-                Why Choose Me
+                {{t('home.about.why_choose_me_title')}}
             </div>
             <div class="description">
-                No shortcuts, just custom code crafted for your unique needs. From visually captivating websites to innovative mobile apps, I’m here to bring your vision to life with creativity and precision.
+                {{t('home.about.why_choose_me_description')}}
             </div>
         </div>
         <img src="../../assets/images/icons/vector-lines/vector-primary-1.svg" alt="" class="vector-line-1">
@@ -14,18 +14,15 @@
         </div>
     </div>
     <img src="../../../assets/images/icons/avatar.svg" alt="" class="avatar-img">
-
-    
-
 </div>
-<div class="right-container">
+<div class="right-container" *transloco="let t">
     <div class="article my-story">
         <div class="article-text-3">
             <div class="title">
-                My Story
+                {{t('home.about.my_story_title')}}
             </div>
             <div class="description">
-                What started as a passion for creating websites and apps has grown into a commitment to building custom digital solutions across industries. I’ve developed a full-stack skillset, from front-end design to back-end systems and server management. Today, I’m dedicated to transforming unique ideas into impactful digital experiences that connect with audiences.
+                {{t('home.about.my_story_description')}}
             </div>
         </div>
         <div class="grid-icon-wrapper">
@@ -36,10 +33,10 @@
     <div class="article partner-with-me">
         <div class="article-text-1">
             <div class="title partner-title">
-                Partner with Me
+                {{t('home.about.partner_with_me_title')}}
             </div>
             <div class="description partner-description">
-                Let’s build standout digital solutions together. I’m committed to collaboration and continuous improvement, whether you’re a startup or a large enterprise. Together, we’ll create digital experiences that truly connect with your audience.
+                {{t('home.about.partner_with_me_description')}}
             </div>
         </div>
         <img src="../../assets/images/icons/circles.svg" alt="" class="circles">

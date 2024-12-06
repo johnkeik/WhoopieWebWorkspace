@@ -1,7 +1,43 @@
 {
+  "home": {
     "home": {
-        "home": {
-            "crafting_custom_digital_solutions": "Crafting Custom Digital Solutions"
-        }
+      "crafting_custom_title": "Crafting Custom",
+      "digital_solutions_title": "Digital Solutions",
+      "title_description_text": "I like to craft solid and scalable products with great user experiences.",
+      "highly_skilled_description": "Highly skilled at progressive enhancement, design systems & UI Engineering.",
+      "proven_experience_description": "Proven experience building successful products for clients across several countries."
+    },
+    "values": {
+      "tailored_designs_title": "Tailored Designs, Just for You",
+      "just_for_you_title": "Just for You",
+      "tailored_designs_description": "Forget cookie-cutter templates! Your business is one of a kind, and your apps should be too.",
+      "cross_platform_reach_title": "Cross-Platform Reach",
+      "cross_platform_reach_description": "Why stay limited? Launch your app on multiple platforms and reach a bigger audience.",
+      "built_in_analytics_title": "Built-In Analytics",
+      "built_in_analytics_description": "Stay in the know! Get actionable insights on visitor behavior to fine-tune your strategies.",
+      "accessibility_first_title": "Accessibility First",
+      "accessibility_first_description": "ADA-compliant designs that welcome everyone, including users with disabilities.",
+      "multilingual_multinational_title": "Multilingual, Multinational",
+      "multilingual_multinational_description": "Expand your reach beyond borders—your app is built to speak the world's languages."
+    },
+    "about": {
+      "why_choose_me_title": "Why Choose Me",
+      "why_choose_me_description": "No shortcuts, just custom code crafted for your unique needs. From visually captivating websites to innovative mobile apps, I’m here to bring your vision to life with creativity and precision.",
+      "my_story_title": "My Story",
+      "my_story_description": "What started as a passion for creating websites and apps has grown into a commitment to building custom digital solutions across industries. I’ve developed a full-stack skillset, from front-end design to back-end systems and server management. Today, I’m dedicated to transforming unique ideas into impactful digital experiences that connect with audiences.",
+      "partner_with_me_title": "Partner with Me",
+      "partner_with_me_description": "Let’s build standout digital solutions together. I’m committed to collaboration and continuous improvement, whether you’re a startup or a large enterprise. Together, we’ll create digital experiences that truly connect with your audience."
+    },
+    "contact": {
+      "send_me_a_message_title": "Send me a message!",
+      "send_me_a_message_description": "Got a question or proposal, or just want to say hello? Go ahead.",
+      "name_placeholder": "Name",
+      "email_placeholder": "Email",
+      "textarea_placeholder": "Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?",
+      "email_text": "john.keikoglou@gmail.com",
+      "shoot_button_title": "SHOOT",
+      "are_you_a_fellow_developer_title": "Are you a fellow developer? Welcome!",
+      "are_you_a_fellow_developer_description": "There’s a spot for you here too.<br/> Stay tuned—our blog on web development tips and tricks is launching soon!"
     }
+  }
 }

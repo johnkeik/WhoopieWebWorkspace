@@ -1,7 +1,7 @@
 <div class="header" [ngClass]="{'hide': !isNavbarVisible, 'light-colored': showLightColor()}">
     <button class="nav-links" (click)="setActive('home')" [ngClass]="{'active' : activeSection() === 'home', 'light-colored': showLightColor()}">
         <div class="dash" [ngClass]="{'active' : activeSection() === 'home', 'light-colored': showLightColor()}"></div>
-        {{ 'home' | transloco }}
+        Home
     </button>
     <button class="nav-links" (click)="setActive('services')" [ngClass]="{'active' : activeSection() === 'services', 'light-colored': showLightColor()}">
         <div class="dash" [ngClass]="{'active' : activeSection() === 'services', 'light-colored': showLightColor()}"></div>
@@ -18,11 +18,52 @@
 
     <div class="languages-wrapper">
         <button class="button-undecorated" (click)="changeLanguage('en')">
-            <img src="../../../assets/images/icons/en-flag.svg" alt="English" class="lang" [ngClass]="{active: true}">
+            <img src="../../../assets/images/icons/en-flag.svg" alt="English" class="lang" [ngClass]="{active: activeLang == 'en'}">
         </button>
         <button (click)="changeLanguage('gr')">
 
-            <img src="../../../assets/images/icons/gr-flag.svg" alt="greek" class="lang" [ngClass]="{active: false}">
+            <img src="../../../assets/images/icons/gr-flag.svg" alt="greek" class="lang" [ngClass]="{active: activeLang === 'gr'}">
         </button>
     </div>
+</div>
+
+<div class="mobile-header" [ngClass]="{'hide': !isNavbarVisible, 'expanded': visibleMenu}">
+    <div class="upper-part">
+        <div class="logo-wrapper">
+            <img src="../../assets/images/logo-light.svg" class="logo" alt="">
+        </div>
+    
+        <button (click)="openMenu()" [attr.aria-label]="visibleMenu ? 'Collapse Menu' : 'Expand menu'">
+            <app-hamburger [open]="visibleMenu"/>
+        </button>
+    </div>
+
+    <div class="main-menu">
+        <button class="nav-links" (click)="setActive('home')" [ngClass]="{'active' : activeSection() === 'home', 'light-colored': true}">
+            <div class="dash" [ngClass]="{'active' : activeSection() === 'home', 'light-colored': true}"></div>
+            Home
+        </button>
+        <button class="nav-links" (click)="setActive('services')" [ngClass]="{'active' : activeSection() === 'services', 'light-colored': true}">
+            <div class="dash" [ngClass]="{'active' : activeSection() === 'services', 'light-colored': true}"></div>
+            Services
+        </button>
+        <button class="nav-links" (click)="setActive('about')" [ngClass]="{'active' : activeSection() === 'about', 'light-colored': true}">
+            <div class="dash" [ngClass]="{'active' : activeSection() === 'about', 'light-colored': true}"></div>
+            About
+        </button>
+        <button class="nav-links" (click)="setActive('contact')" [ngClass]="{'active' : activeSection() === 'contact', 'light-colored': true}">
+            <div class="dash" [ngClass]="{'active' : activeSection() === 'contact', 'light-colored': true}"></div>
+            Contact
+        </button>
+    
+        <div class="languages-wrapper">
+            <button class="lang-button" [ngClass]="{active : activeLang === 'en'}" (click)="changeLanguage('en')">
+                <img src="../../../assets/images/icons/en-flag.svg" alt="English" class="lang">
+            </button>
+            <button class="lang-button" [ngClass]="{active :  activeLang === 'gr'}" (click)="changeLanguage('gr')">
+                <img src="../../../assets/images/icons/gr-flag.svg" alt="greek" class="lang">
+            </button>
+        </div>
+    </div>
+    
 </div>

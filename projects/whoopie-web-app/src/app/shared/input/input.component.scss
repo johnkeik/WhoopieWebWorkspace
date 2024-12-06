@@ -20,7 +20,8 @@
         pointer-events: none;
         transition: all 0.3s ease;
         margin: 0;
-        font-family: 'Baloo-Regular';
+        font-family: 'Ubuntu-Bold';
+        font-weight: 900;
 
         &.focused {
             top: -0.50rem;

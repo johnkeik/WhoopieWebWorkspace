@@ -48,7 +48,8 @@
     }
 
     .title {
-        font-family: 'Baloo-Regular';
+        font-family: 'Ubuntu-Bold';
+        font-weight: 900;
         font-size: var(--font-size-large);
 
         @include tablet {

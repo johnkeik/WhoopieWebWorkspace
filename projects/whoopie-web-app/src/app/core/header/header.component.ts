@@ -5,13 +5,14 @@ import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/all';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
+import { HamburgerComponent } from '../../shared/hamburger/hamburger.component';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, TranslocoPipe],
+  imports: [CommonModule, TranslocoPipe, HamburgerComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -59,9 +60,11 @@ export class HeaderComponent implements AfterContentInit {
         link.classList.remove("hovered-link");
       });
     });
+    this.setActiveLang();
   }
 
   setActive(page: string){
+    this.visibleMenu = false;
     if(page === 'services') this.activeSerctionHandlerService.setActiveSection(page);
     const el = document.getElementById(page);
         if (el) {
@@ -89,5 +92,15 @@ export class HeaderComponent implements AfterContentInit {
 
 changeLanguage(lang: 'en' | 'gr') {
   this.translocoService.setActiveLang(lang);
+  this.setActiveLang();
+}
+
+activeLang = 'en';
+setActiveLang() {
+  this.activeLang = this.translocoService.getActiveLang();
+}
+visibleMenu = false;
+openMenu() {
+this.visibleMenu = !this.visibleMenu;
 }
 }

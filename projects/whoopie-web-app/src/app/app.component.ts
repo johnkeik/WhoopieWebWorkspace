@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { appInit } from './app-init';
 import { LoadingHandComponent } from './shared/loading-hand/loading-hand.component';
 import { gsap } from 'gsap';
+import { TranslocoService } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,14 @@ import { gsap } from 'gsap';
 export class AppComponent {
   titsle = 'whoopie-web-app';
   appStatus = appInit();
+  translocoService = inject(TranslocoService);
+  loadingTransloco = true;
 
   constructor() {
     this.initCursorListeners();
+    this.translocoService.selectTranslateObject('home').subscribe(() => {
+      this.loadingTransloco = false;
+    });
   }
 
   initCursorListeners() {
@@ -47,6 +53,11 @@ export class AppComponent {
         backgroundColor: 'transparent',
       });
     });
+  }
+
+
+  reload() {
+    location.reload();
   }
 
 }

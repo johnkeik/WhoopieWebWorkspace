@@ -1,19 +1,18 @@
-<div class="first-container" id="home-dark-container">
+<div class="first-container" id="home-dark-container" *transloco="let t">
     <div class="logo-wrapper">
         <img src="../../assets/images/logo-light.svg" class="logo" alt="">
     </div>
     <div class="title-container">
-        <span class="title">Crafting Custom</span>
-        <span class="title">Digital Solutions</span>
-        <span class="title-description">I like to craft solid and scalable products with great user Δοκιμαστικο
-            experiences.</span>
+        <span class="title">{{t('home.home.crafting_custom_title')}}</span>
+        <span class="title">{{t('home.home.digital_solutions_title')}}</span>
+        <span class="title-description">{{t('home.home.title_description_text')}}</span>
     </div>
     <div class="skills-container">
         <span class="skill-1-label">
-            Highly skilled at progressive enhancement, design systems & UI Engineering. Δοκιμαστικο
+            {{t('home.home.highly_skilled_description')}}
         </span>
         <span class="skill-2-label">
-            Proven experience building successful products for clients across several countries. 
+            {{t('home.home.proven_experience_description')}}
         </span>
     </div>
 
