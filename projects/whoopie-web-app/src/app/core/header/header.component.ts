@@ -1,10 +1,15 @@
-import { AfterContentInit, Component, HostListener, inject } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  HostListener,
+  inject,
+} from '@angular/core';
 import { ActiveSectionHandlerService } from '../services/active-section-handler.service';
 import { CommonModule } from '@angular/common';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/all';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
+import { TranslocoService } from '@jsverse/transloco';
 import { HamburgerComponent } from '../../shared/hamburger/hamburger.component';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,9 +17,9 @@ gsap.registerPlugin(ScrollToPlugin);
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, TranslocoPipe, HamburgerComponent],
+  imports: [CommonModule, HamburgerComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements AfterContentInit {
   activeSection = inject(ActiveSectionHandlerService).activeSection;
@@ -23,6 +28,8 @@ export class HeaderComponent implements AfterContentInit {
   translocoService = inject(TranslocoService);
   isNavbarVisible = true;
   private previousScrollPosition = window.scrollY;
+  visibleMenu = false;
+  activeLang = 'en';
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -38,69 +45,71 @@ export class HeaderComponent implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    let links = document.querySelectorAll(".nav-links");
+    let links = document.querySelectorAll('.nav-links');
     links.forEach((link, index) => {
-      link.addEventListener("mouseover", () => {
+      link.addEventListener('mouseover', () => {
         gsap.to('.cursor-outline', {
           width: 24,
           height: 24,
           backgroundColor: '#EE5A22',
-          opacity: 0.5
-        })
-        link.classList.add("hovered-link");
+          opacity: 0.5,
+        });
+        link.classList.add('hovered-link');
       });
-      link.addEventListener("mouseleave", () => {
+      link.addEventListener('mouseleave', () => {
         gsap.to('.cursor-outline', {
           width: 48,
           height: 48,
           backgroundColor: 'transparent',
-          opacity: 1
-  
-        })
-        link.classList.remove("hovered-link");
+          opacity: 1,
+        });
+        link.classList.remove('hovered-link');
       });
     });
     this.setActiveLang();
   }
 
-  setActive(page: string){
+  setActive(page: string) {
     this.visibleMenu = false;
-    if(page === 'services') this.activeSerctionHandlerService.setActiveSection(page);
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = ''; 
+    if (page === 'services')
+      this.activeSerctionHandlerService.setActiveSection(page);
     const el = document.getElementById(page);
-        if (el) {
-          // Get the element's position relative to the document (page)
-          const elementPosition = el.getBoundingClientRect().top + window.scrollY;
-    
-          // If the element is pinned, adjust the scroll position manually
-          // Use ScrollTrigger's pin state to determine how much to scroll
-          const pinOffset = this.getPinOffset(el);
-          const scrollPosition = elementPosition - pinOffset;
-    
-          // Scroll to the adjusted position, considering the pinning effect
-          gsap.to(window, {
-            scrollTo: { y: scrollPosition, autoKill: false },
-            duration: 0
-          });
-        }
+    if (el) {
+      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+      const pinOffset = this.getPinOffset(el);
+      const scrollPosition = elementPosition - pinOffset;
+      gsap.to(window, {
+        scrollTo: { y: scrollPosition, autoKill: false },
+        duration: 0,
+      });
+    }
   }
 
-  // Function to get the pin offset (if the element is pinned)
- getPinOffset(el: HTMLElement): number {
-  const pin = ScrollTrigger.getById(el.id);
-  return pin && pin.isActive ? el.offsetHeight : 0; // Adjust based on pinning state
-}
+  getPinOffset(el: HTMLElement): number {
+    const pin = ScrollTrigger.getById(el.id);
+    return pin && pin.isActive ? el.offsetHeight : 0;
+  }
 
-changeLanguage(lang: 'en' | 'gr') {
-  this.translocoService.setActiveLang(lang);
-  this.setActiveLang();
-}
+  changeLanguage(lang: 'en' | 'gr') {
+    this.translocoService.setActiveLang(lang);
+    this.setActiveLang();
+  }
 
-activeLang = 'en';
-setActiveLang() {
-  this.activeLang = this.translocoService.getActiveLang();
-}
-visibleMenu = false;
-openMenu() {
-this.visibleMenu = !this.visibleMenu;
-}
+  setActiveLang() {
+    this.activeLang = this.translocoService.getActiveLang();
+  }
+
+  openMenu() {
+    this.visibleMenu = !this.visibleMenu;
+    if (this.visibleMenu) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = ''; 
+    }
+  }
 }

@@ -72,7 +72,7 @@
             "tsConfig": "projects/whoopie-web-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/whoopie-web-app/src/favicon.ico",
+              "projects/whoopie-web-app/src/favicon-1.ico",
               "projects/whoopie-web-app/src/assets"
             ],
             "styles": ["projects/whoopie-web-app/src/styles.scss"],
@@ -127,7 +127,7 @@
             "tsConfig": "projects/whoopie-web-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/whoopie-web-app/src/favicon.ico",
+              "projects/whoopie-web-app/src/favicon-1.ico",
               "projects/whoopie-web-app/src/assets"
             ],
             "styles": ["projects/whoopie-web-app/src/styles.scss"],
