@@ -5,21 +5,60 @@
     <span class="description">
         {{t('home.contact.send_me_a_message_description')}}
     </span>
-
-
-</div>
-<div class="form-container" *transloco="let t">
-    <div class="contact-information-inputs-wrapper">
-        <app-input [type]="'text'" [placeholder]="t('home.contact.name_placeholder')" [required]="true" />
-        <app-input [type]="'text'" [placeholder]="t('home.contact.email_placeholder')" [required]="true" />
+    <div class="social-links">
+        <button class="button-undecorated social facebook" aria-label="Facebook">
+            <img src="../../../../assets/images/icons/social/facebook.svg" alt="Facebook">
+        </button>
+        <button class="button-undecorated social linkedin" aria-label="LinkedIn">
+            <img src="../../../../assets/images/icons/social/linkedin.svg" alt="LinkedIn">
+        </button>
+        <button class="button-undecorated social instagram" aria-label="Instagram">
+            <img src="../../../../assets/images/icons/social/instagram.svg" alt="Instagram">
+        </button>
     </div>
-    <textarea class="text-area" name="" id=""
-        [placeholder]="t('home.contact.textarea_placeholder')"></textarea>
-        <span class="email">{{"john.keikoglou@gmail.com"}}</span>
-    <button class="submit-button">
-        <span class="title">{{t('home.contact.shoot_button_title')}}</span>
-    </button>
 </div>
+<form [formGroup]="contactForm" class="form-container" *transloco="let t" (ngSubmit)="submit()">
+    <div class="contact-information-inputs-wrapper">
+        <app-input 
+            formControlName="name"  
+            [type]="'text'" 
+            [placeholder]="t('home.contact.name_placeholder')" 
+            [required]="true" 
+            [invalidMessage]="formIsInvalid && name.invalid ? validationMessages.name.required : undefined"
+        />
+        <app-input 
+            formControlName="email"
+            [type]="'text'" 
+            [placeholder]="t('home.contact.email_placeholder')" 
+            [required]="true" 
+            [invalidMessage]="formIsInvalid ? emailError : undefined"
+        />
+    </div>
+    <app-input 
+        formControlName="message"  
+        [type]="'textarea'" 
+        [placeholder]="t('home.contact.textarea_placeholder')" 
+        [required]="true" 
+        [invalidMessage]="formIsInvalid && message.invalid ? validationMessages.message.required : undefined"
+    />
+    <span class="email">{{"john.keikoglou@gmail.com"}}</span>
+    @if(response){
+        <div class="response-message" [ngClass]="{success: response === 'success'}">
+            <div [ngClass]="{'error-sign': response === 'error', 'success-sign': response === 'success'}"></div>
+            <span>{{response === 'success' ? successMessage : errorMessage }}</span>
+        </div>
+    }
+    <button type="submit" id="contact-submit-button" class="submit-button">
+            <span class="title" [ngClass]="{loading: loading}">
+                {{t('home.contact.shoot_button_title')}}
+                @if(loading){
+                    <div class="loader-wrapper">
+                        <div class="loader"></div>
+                    </div>
+                }
+            </span>
+    </button>
+</form>
 
 <div class="coming-soon-wrapper" *transloco="let t">
     <div class="announcement-wrapper">

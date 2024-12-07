@@ -33,7 +33,7 @@
             <img src="../../assets/images/logo-light.svg" class="logo" alt="">
         </div>
     
-        <button (click)="openMenu()" [attr.aria-label]="visibleMenu ? 'Collapse Menu' : 'Expand menu'">
+        <button (click)="toggleMenu()" [attr.aria-label]="visibleMenu ? 'Collapse Menu' : 'Expand menu'">
             <app-hamburger [open]="visibleMenu"/>
         </button>
     </div>

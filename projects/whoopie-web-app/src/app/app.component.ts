@@ -4,6 +4,7 @@ import { appInit } from './app-init';
 import { LoadingHandComponent } from './shared/loading-hand/loading-hand.component';
 import { gsap } from 'gsap';
 import { TranslocoService } from '@jsverse/transloco';
+import { CookieService } from './core/services/cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -16,13 +17,19 @@ export class AppComponent {
   titsle = 'whoopie-web-app';
   appStatus = appInit();
   translocoService = inject(TranslocoService);
+  cookieService = inject(CookieService)
   loadingTransloco = true;
 
   constructor() {
     this.initCursorListeners();
+    const lang_cookie = this.cookieService.getCookie('lang')
+    if(lang_cookie){
+      this.translocoService.setActiveLang(lang_cookie);
+    }
     this.translocoService.selectTranslateObject('home').subscribe(() => {
       this.loadingTransloco = false;
     });
+
   }
 
   initCursorListeners() {

@@ -35,10 +35,10 @@
         "email_placeholder": "Email",
         "textarea_placeholder": "Γεια, νομίζω ότι χρειαζόμαστε ένα σύστημα για τα προϊόντα μας στην Εταιρεία Χ. Πόσο γρήγορα μπορείς να έρθεις για να το συζητήσουμε;",
         "email_text": "john.keikoglou@gmail.com",
-        "shoot_button_title": "ΣΤΕΙΛΕ",
+        "shoot_button_title": "ΑΠΟΣΤΟΛΗ",
         "are_you_a_fellow_developer_title": "Είσαι και εσύ developer; Καλωσήρθες!",
         "are_you_a_fellow_developer_description": "Υπάρχει χώρος και για σένα εδώ.<br/> Μείνε συντονισμένος—το blog μας για web development tips και tricks θα λανσαριστεί σύντομα!",
-        "coming_soon_description": "Υπάρχει χώρος και για σένα εδώ.<br/> Μείνε συντονισμένος—το blog μας για web development tips και tricks θα λανσαριστεί σύντομα!"
+        "coming_soon_description": "Υπάρχει χώρος και για σένα εδώ. Μείνε συντονισμένος—το blog μας για web development tips και tricks θα λανσαριστεί σύντομα!"
       }
     }
   }

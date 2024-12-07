@@ -1,6 +1,7 @@
 :host {
     width: 100%;
 }
+
 .input-container {
     position: relative;
     width: 100%;
@@ -41,15 +42,27 @@
     }
 }
 
-.pass-reveal {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+.text-area {
+    border: 1px solid grey;
+    background-color: var(--light-background);
+    font-size: 1rem;
 
-    .icon {
-        display: flex;
-        width: 1.313rem;
-        height: 1.313rem;
+    &:focus {
+        background-color: var(--light-background);
     }
+
+    &.isDirty {
+        border-color: red;
+    }
+}
+
+.error-message {
+    font-size: 0.875rem;
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    font-weight: bold;
+    justify-content: start;
+    align-items: center;
 
 }

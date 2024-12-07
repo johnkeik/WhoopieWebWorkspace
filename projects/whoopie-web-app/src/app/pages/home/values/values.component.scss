@@ -7,7 +7,11 @@
 }
 
 .values-container-wrapper {
-    padding: 0 150px;
+    padding: 0 50px 0 20px;
+
+    @include tablet {
+        padding: 0 150px;
+    }
 }
 
 .values-container {
@@ -17,7 +21,7 @@
     column-gap: 150px;
     width: fit-content;
     flex-wrap: nowrap;
-    padding: 30vh 350px 150px 50px;
+    padding: 30vh 150px 150px 0px;
 
     @include tablet {
         padding: 300px 400px 300px 150px;
@@ -34,6 +38,7 @@
         font-size: var(--font-size-large);
         line-height: 2.2rem;
         font-weight: 900;
+        
         @include tablet {
             font-size: var(--font-size-xl);
             line-height: 3rem;
@@ -57,7 +62,7 @@
     width: max-content;
 
     @include tablet {
-        max-width: 550px;
+        max-width: 450px;
     }
 
 }
@@ -109,7 +114,11 @@
         top: 0;
         right: 15%;
         transform: translateY(-120%);
-        width: 300px;
+        width: 200px;
+
+        @include tablet {
+            width: 300px;
+        }
 
     }
 }
@@ -188,19 +197,11 @@
         position: absolute;
         top: 100%;
         right: 0;
-        width: 300px;
+        width: 250px;
 
         @include tablet {
             right: 25%;
             width: 320px;
-        }
-    }
-
-    .title {
-        text-wrap: wrap;
-        
-        @include tablet {
-            text-wrap: nowrap;
         }
     }
 }

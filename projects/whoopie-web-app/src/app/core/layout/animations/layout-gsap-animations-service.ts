@@ -18,7 +18,7 @@ export class LayoutGsapAnimationsService {
     const scrollAmount = this.getScrollAmount();
 
     const masterTimeline = gsap.timeline();
-
+    
     masterTimeline.to('.values-container', {
       x: scrollAmount,
       duration: 3,
@@ -33,7 +33,6 @@ export class LayoutGsapAnimationsService {
         invalidateOnRefresh: true,
         id: 'values-container-id',
         onEnter: () => {
-          console.log('enter')
           this.activeSectoinHandlerService.setActiveSection('services')
         },
         onEnterBack: () => {
@@ -55,7 +54,7 @@ export class LayoutGsapAnimationsService {
         scrollTrigger: {
           trigger: '.values-container-wrapper',
           start: 'top 80%',
-          end: () => `+=${scrollAmount * -1.5}`,
+          end: () => `+=${scrollAmount * - 0.8}`,
           scrub: 1,
           toggleActions: 'play none none reverse',
         },

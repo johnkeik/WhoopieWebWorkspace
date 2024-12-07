@@ -18,9 +18,8 @@ export class HamburgerComponent implements OnChanges {
     loop: false
   };
 
-  private animationItem!: AnimationItem; // Store the animation instance
+  private animationItem!: AnimationItem;
 
-  // This gets called when the animation is created
   onAnimationCreated(animation: AnimationItem): void {
     this.animationItem = animation;
     this.animationItem.setSpeed(2)
@@ -28,7 +27,6 @@ export class HamburgerComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['open'] && this.animationItem) {
-      // Play animation based on the toggle value
       if (this.open()) {
         this.playToHalf();
 
@@ -38,21 +36,13 @@ export class HamburgerComponent implements OnChanges {
     }
   }
 
-  // Play the animation up to the halfway point
   private playToHalf(): void {
     const halfFrame = this.animationItem.totalFrames / 2;
-    // this.animationItem.goToAndPlay(halfFrame, true); 
-    this.animationItem.playSegments([0, 70], true); // Play from start to halfway
+    this.animationItem.playSegments([0, 70], true);
   }
 
-  // Play the animation from halfway to the end
   private playFromHalfToEnd(): void {
-    const halfFrame = this.animationItem.totalFrames / 2;
-    console.log(this.animationItem.totalFrames)
-    // this.animationItem.goToAndStop(this.animationItem.totalFrames, true); 
-    // this.animationItem.goToAndPlay(halfFrame, true); 
-
-    this.animationItem.playSegments([70, 140], true); // Play from halfway to end/
+    this.animationItem.playSegments([70, 140], true);
   }
   
 }

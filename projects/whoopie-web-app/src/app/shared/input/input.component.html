@@ -1,16 +1,27 @@
-<div class="input-container">
-    <input 
-        class="front" 
-        [ngClass]="{'focused' : focused() || value, 'invalid': invalid()}"
-        [type]="finalInputType" 
+@if(type() === 'textarea') {
+    <textarea
+        class="text-area" 
+        [placeholder]="placeholder()"
+        [ngClass]="{'isDirty': !!invalidMessage()}"
         [(ngModel)]="value"
         (ngModelChange)="onModelChange($event)" 
-        (focus)="focused.set(true)" 
-        (blur)="focused.set(false)"
-        (keypress)="onKeyPress($event)"
-        [id]="inputId"
-        [maxlength]="maxLength()"
-        [disabled]="disableInput()"
-    />    
-    <label [ngClass]="{'required': required(), 'focused': focused() || value}" [for]="inputId">{{placeholder()}}</label>
-</div>
+    ></textarea>
+} @else {
+    <div class="input-container">
+        <input 
+            class="front" 
+            [ngClass]="{'focused' : focused() || value, 'isDirty': !!invalidMessage()}"
+            [type]="finalInputType" 
+            [(ngModel)]="value"
+            (ngModelChange)="onModelChange($event)" 
+            (focus)="focused.set(true)" 
+            (blur)="focused.set(false)"
+            [id]="inputId"
+            [disabled]="disableInput()"
+        />    
+        <label [ngClass]="{'required': required(), 'focused': focused() || value}" [for]="inputId">{{placeholder()}}</label>
+    </div>
+}
+
+
+<span class="error-message" [style.visibility]="invalidMessage() ? 'visible' : 'hidden'"><span class="error-sign"></span>{{invalidMessage()}}</span>

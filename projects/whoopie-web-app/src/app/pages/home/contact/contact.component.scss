@@ -19,19 +19,39 @@
     text-align: center;
     color: var(--dark-text);
     z-index: 2;
+    gap: 8px;
 
     .title {
         font-size: var(--font-size-large);
         font-family: 'Ubuntu-Bold';
         font-weight: 900;
+        line-height: var(--font-size-large);
+        ;
 
         @include tablet {
             font-size: var(--font-size-xl);
+            line-height: var(--font-size-xl);
+            ;
         }
     }
 
     .description {
         max-width: 340px;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 16px;
+
+        .social {
+            background-color: none;
+            border-radius: 100%;
+            display: flex;
+            width: 32px;
+            height: 32px;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
@@ -40,7 +60,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 16px;
     z-index: 2;
     min-width: min(500px, 90vw);
 
@@ -55,16 +74,6 @@
         }
     }
 
-    .text-area {
-        border: 1px solid grey;
-        background-color: var(--light-background);
-        font-size: 1rem;
-
-        &:focus {
-            background-color: var(--light-background);
-        }
-    }
-
     .email {
         font-size: 0.875rem;
         width: 100%;
@@ -73,30 +82,88 @@
         white-space: nowrap;
     }
 
+    .response-message {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 8px;
+        background-color: var(--error-container);
+        color: var(--error);
+        font-weight: 1rem;
+        gap: 8px;
+        border-radius: 8px;
+        margin-top: 16px;
+
+        &.success {
+            background-color: var(--success-container);
+            color: var(--success);
+        }
+    }
+
     .submit-button {
-        max-width: 200px;
-        font-size: 1rem;
+        margin-top: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 16px;
-        background-color: var(--light-background);
-        border: 1px solid grey;
-        height: 3rem;
-        transition: all 0.3s ease-in-out;
-        font-weight: 'Ubuntu-Bold';
-        font-weight: 900;
-        font-weight: bold;
-        position: relative;
+        padding: 5px 25px;
+        background-color: var(--light-background-darker);
+        height: 3.5rem;
+        border-radius: 8px;
 
-        &:hover {
-            box-shadow: inset 300px 0 0 0 var(--light-background-darker);
+        &:active {
+            box-shadow: 0.125rem 0.3125rem 0.25rem 0 rgba(0, 0, 0, 0.25) inset;
+            outline: none;
         }
 
-        &:focus {
-            box-shadow: inset 300px 0 0 0 var(--light-background-darker);
+        &:focus-visible {
+
+            outline: 2px solid var(--primary-dark);
+            outline-offset: 4px;
         }
+
+        .title {
+            font-size: 1.5rem;
+            line-height: 2.2rem;
+            font-family: 'Ubuntu-Bold';
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--text);
+            width: fit-content;
+            position: relative;
+
+        }
+
+        .loader-wrapper {
+            position: absolute;
+            right: -35px;
+            top: 50%;
+        }
+
+        .loader {
+            --d: 11px;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            color: var(--primary-dark);
+            box-shadow:
+                calc(1*var(--d)) calc(0*var(--d)) 0 0,
+                calc(0.707*var(--d)) calc(0.707*var(--d)) 0 1px,
+                calc(0*var(--d)) calc(1*var(--d)) 0 2px,
+                calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+                calc(-1*var(--d)) calc(0*var(--d)) 0 4px,
+                calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+                calc(0*var(--d)) calc(-1*var(--d)) 0 6px;
+            animation: l27 1s infinite steps(8);
+        }
+
+        @keyframes l27 {
+            100% {
+                transform: rotate(1turn)
+            }
+        }
+
     }
+
 
 }
 
@@ -125,6 +192,7 @@
 
         .description {
             display: none;
+            z-index: 2;
 
             @include tablet {
                 display: flex;
@@ -137,6 +205,10 @@
 
         @include tablet {
             display: none;
+        }
+
+        .description {
+            z-index: 2;
         }
     }
 

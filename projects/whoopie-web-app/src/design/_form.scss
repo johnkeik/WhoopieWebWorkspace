@@ -30,10 +30,15 @@ select {
   line-height: 1.25rem;
   font-weight: 400;
   color: var(--dark-text);
+  border-radius: 8px;
 
   &:focus {
     background-color: var(--light-background);
-    outline: 0;
+    // outline: 0;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--primary-dark);
+    outline-offset: 2px;
   }
   
   &:before,
@@ -93,4 +98,68 @@ input[type='radio'] {
   &:after {
     box-sizing: border-box;
   }
+}
+
+
+
+.error-sign{
+  display: flex;
+  padding: 5px;
+  border-radius: 100%;
+  background-color: var(--error);
+  width: 15px;
+  height: 15px;
+  font-size: 14px;
+  line-height: 14px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  outline-color: rgb(255, 150, 150);
+  outline-style: solid;
+  animation: pulse 1s ease-in-out infinite;
+  margin: 6px 6px 6px 0px;
+}
+
+.error-sign::after {
+  content: "!";
+}
+
+.success-sign{
+  display: flex;
+  padding: 5px;
+  border-radius: 100%;
+  background-color: var(--success);
+  width: 15px;
+  height: 15px;
+  font-size: 14px;
+  line-height: 14px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  outline-color: #5cceb2;
+  outline-style: solid;
+  animation: pulse 1s ease-in-out infinite;
+  margin: 6px 6px 6px 0px;
+}
+
+.success-sign::after {
+  content: "\2713";
+}
+
+@keyframes pulse {
+  0% {
+      outline-width: 2px;
+      scale: 1;
+  }
+
+  50% {
+      outline-width: 4px;
+      scale: 1.1;
+  }
+
+  100% {
+      outline-width: 2px;
+      scale: 1;
+  }
+
 }

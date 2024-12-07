@@ -11,6 +11,7 @@ import { ScrollToPlugin } from 'gsap/all';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TranslocoService } from '@jsverse/transloco';
 import { HamburgerComponent } from '../../shared/hamburger/hamburger.component';
+import { CookieService } from '../services/cookie-service';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -26,6 +27,8 @@ export class HeaderComponent implements AfterContentInit {
   showLightColor = inject(ActiveSectionHandlerService).showLightColor;
   activeSerctionHandlerService = inject(ActiveSectionHandlerService);
   translocoService = inject(TranslocoService);
+  cookieService = inject(CookieService);
+
   isNavbarVisible = true;
   private previousScrollPosition = window.scrollY;
   visibleMenu = false;
@@ -95,13 +98,15 @@ export class HeaderComponent implements AfterContentInit {
   changeLanguage(lang: 'en' | 'gr') {
     this.translocoService.setActiveLang(lang);
     this.setActiveLang();
+    if(this.visibleMenu) this.toggleMenu();
   }
 
   setActiveLang() {
     this.activeLang = this.translocoService.getActiveLang();
+    this.cookieService.setCookie('lang', this.activeLang);
   }
 
-  openMenu() {
+  toggleMenu() {
     this.visibleMenu = !this.visibleMenu;
     if (this.visibleMenu) {
       document.body.style.overflow = 'hidden';
