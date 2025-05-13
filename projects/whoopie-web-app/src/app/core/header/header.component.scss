@@ -111,13 +111,13 @@ button:active {
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 30px 32px;
+    padding: 15px 32px;
     background-color: var(--dark-background);
     z-index: 999;
     top: 0;
     transition: all 0.3s ease-in-out;
     height: 100%;
-    max-height: 120px;
+    max-height: 90px;
     overflow: hidden;
 
     @include tablet {
@@ -173,3 +173,29 @@ button:active {
         }
     }
 }
+
+
+.join-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: #5865f2;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-left: -10px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .discord-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }

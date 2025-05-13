@@ -1,0 +1,72 @@
+:host {
+    background-color: var(--light-background);
+    padding: 2rem;
+    display: flex;
+    width: 100%;
+}
+.discord-cta {
+    padding: 3rem 1.5rem;
+    background: var(--dark-background); // Discord blurple
+    color: white;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      .spark {
+        animation: sparkle 1.2s infinite alternate;
+      }
+    }
+  
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+  
+    .join-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: white;
+      color: var(--dark-background);
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      }
+  
+      .discord-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  
+  @keyframes sparkle {
+    0% {
+      opacity: 0.7;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  

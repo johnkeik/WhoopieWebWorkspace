@@ -1,0 +1,75 @@
+<div class="blog-container">
+  <!-- Decorative elements -->
+  <div class="decorative-circle top-right"></div>
+  <div class="decorative-circle bottom-left"></div>
+  
+  <header class="blog-header">
+    <h1>Frontend Playground</h1>
+    <p class="subtitle">Cutting-edge insights and tutorials for the modern web developer</p>
+  </header>
+
+  <div class="featured-article">
+    <div class="image-container">
+        <img [src]="blogPosts[0].imageUrl" [alt]="blogPosts[0].title" class="featured-image">
+    </div>
+    <div class="info-container">
+        <div class="article-info">
+            <div class="read-time-container">
+                <span class="news">News!</span>
+                <span class="read-time">{{ blogPosts[0].readTime }}</span>
+            </div>
+            <span class="title">{{ blogPosts[0].title }}</span>
+            <span class="description">{{ blogPosts[0].description }}</span>
+            <div class="card-tags">
+                @for (tag of blogPosts[0].tags.slice(0, 3); track tag) {
+                  <span class="tag">#{{ tag }}</span>
+                }
+              </div>
+            <button class="read-more">Read More</button>
+        </div>
+    </div>
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="Discover articles..." class="search-input">
+  </div>
+
+  <h3 class="section-title">All Articles</h3>
+
+  <div class="blog-grid">
+    @for (post of blogPosts; track post.id) {
+      <article class="blog-card">
+        <div class="card-image">
+          <img [src]="post.imageUrl" [alt]="post.title">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="date">{{ post.date | date:'MMM d, yyyy' }}</span>
+            <span class="read-time">{{ post.readTime }}</span>
+          </div>
+          <h2 class="card-title">{{ post.title }}</h2>
+          <p class="card-description">{{ post.description }}</p>
+          <div class="card-author">
+            {{ post.author }}
+          </div>
+          <div class="card-tags">
+            @for (tag of post.tags.slice(0, 3); track tag) {
+              <span class="tag">#{{ tag }}</span>
+            }
+          </div>
+          <button class="read-more">Explore Article</button>
+        </div>
+      </article>
+    }
+  </div>
+
+  <!-- <div class="pagination">
+    <button class="pagination-button">&laquo; Previous</button>
+    <div class="page-numbers">
+      <span class="page-number active">1</span>
+      <span class="page-number">2</span>
+      <span class="page-number">3</span>
+    </div>
+    <button class="pagination-button">Next &raquo;</button>
+  </div> -->
+</div>

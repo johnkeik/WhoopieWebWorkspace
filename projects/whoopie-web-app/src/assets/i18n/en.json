@@ -3,41 +3,41 @@
     "home": {
       "crafting_custom_title": "Crafting Custom",
       "digital_solutions_title": "Digital Solutions",
-      "title_description_text": "I like to craft solid and scalable products with great user experiences.",
-      "highly_skilled_description": "Highly skilled at progressive enhancement, design systems & UI Engineering.",
-      "proven_experience_description": "Proven experience building successful products for clients across several countries."
+      "title_description_text": "A creative space for front-end developers to experiment, grow, and connect — one idea at a time.",
+      "highly_skilled_description": "Join a Future-Focused Community. Push boundaries with modern UI, animations, and design systems.",
+      "proven_experience_description": "Learn, Share, and Level Up. Whether you're just starting or deep into your journey, there's always room to grow — together."
     },
     "values": {
-      "tailored_designs_title": "Tailored Designs, Just for You",
-      "just_for_you_title": "Just for You",
-      "tailored_designs_description": "Forget cookie-cutter templates! Your business is one of a kind, and your apps should be too.",
-      "cross_platform_reach_title": "Cross-Platform Reach",
-      "cross_platform_reach_description": "Why stay limited? Launch your app on multiple platforms and reach a bigger audience.",
-      "built_in_analytics_title": "Built-In Analytics",
-      "built_in_analytics_description": "Stay in the know! Get actionable insights on visitor behavior to fine-tune your strategies.",
-      "accessibility_first_title": "Accessibility First",
-      "accessibility_first_description": "ADA-compliant designs that welcome everyone, including users with disabilities.",
-      "multilingual_multinational_title": "Multilingual, Multinational",
-      "multilingual_multinational_description": "Expand your reach beyond borders—your app is built to speak the world's languages."
+      "cutting_edge_experiments_title": "Cutting-Edge Front-End Experiments",
+      "cutting_edge_experiments_description": "Stay ahead of the curve! Dive into live coding sessions, discover futuristic UI/UX ideas, and push the boundaries of what's possible on the web.",
+      "skill_growth_beyond_code_title": "Skill Growth Beyond Code",
+      "skill_growth_beyond_code_description": "We believe in growing the whole developer — not just your skills with HTML, CSS, and JavaScript, but also your creativity, confidence, and career.",
+      "collaborative_learning_title": "Collaborative Learning",
+      "collaborative_learning_description": "Whether you're a beginner or a seasoned engineer, you'll find mentorship opportunities, peer reviews, and collaborative projects to level up together.",
+      "showcase_your_creations_title": "Showcase Your Creations",
+      "showcase_your_creations_description": "Got a crazy idea? A sleek component? A mind-blowing animation? Share it with the community, get feedback, and inspire others with your work.",
+
+      "future_ready_community_title": "A Supportive, Future-Ready Tribe",
+      "future_ready_community_description": "This isn't just another server — it's a forward-thinking home for builders, dreamers, and innovators. Grow your network, your skills, and your mindset with us."
     },
     "about": {
-      "why_choose_me_title": "Why Choose Me",
-      "why_choose_me_description": "No shortcuts, just custom code crafted for your unique needs. From visually captivating websites to innovative mobile apps, I’m here to bring your vision to life with creativity and precision.",
-      "my_story_title": "My Story",
-      "my_story_description": "What started as a passion for creating websites and apps has grown into a commitment to building custom digital solutions across industries. I’ve developed a full-stack skillset, from front-end design to back-end systems and server management. Today, I’m dedicated to transforming unique ideas into impactful digital experiences that connect with audiences.",
-      "partner_with_me_title": "Partner with Me",
-      "partner_with_me_description": "Let’s build standout digital solutions together. I’m committed to collaboration and continuous improvement, whether you’re a startup or a large enterprise. Together, we’ll create digital experiences that truly connect with your audience."
+      "why_choose_me_title": "Why Join Us",
+      "why_choose_me_description": "Whether you're a curious beginner or a seasoned developer, this space is built for you. It’s more than just a chat or a blog — it’s an evolving hub where front-end enthusiasts gather to experiment, grow, and build the web of tomorrow. You'll find hands-on ideas, discussions that challenge you, and people who actually care about crafting great user experiences.",
+      "my_story_title": "The Initiative",
+      "my_story_description": "This community started with a simple idea: front-end development should be exciting, human, and shared. We believe in a web that's expressive and inclusive — and in a community that helps each other thrive. It's not just about pushing pixels or shipping code; it's about learning in public, growing with others, and making your work more meaningful.",
+      "partner_with_me_title": "Looking Forward",
+      "partner_with_me_description": "We’re just getting started. From live experiments and creative showcases to peer mentorship and mental wellness talks, the vision is to build a community that nurtures both skill and self. Come shape it with us — one interaction, one idea, and one breakthrough at a time."
     },
     "contact": {
       "send_me_a_message_title": "Send me a message!",
       "send_me_a_message_description": "Got a question or proposal, or just want to say hello? Go ahead.",
       "name_placeholder": "Name",
       "email_placeholder": "Email",
-      "textarea_placeholder": "Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?",
+      "textarea_placeholder": "Tell us what's on your mind — feedback, ideas, or just a hello 👋",
       "email_text": "john.keikoglou@gmail.com",
       "shoot_button_title": "SEND REQUEST",
       "are_you_a_fellow_developer_title": "Are you a fellow developer? Welcome!",
-      "are_you_a_fellow_developer_description": "There’s a spot for you here too. Stay tuned—our blog on web development tips and tricks is launching soon!"
+      "are_you_a_fellow_developer_description": "Stay tuned—our blog on web development tips and tricks is launching soon!"
     }
   }
 }

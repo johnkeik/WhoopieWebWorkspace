@@ -184,8 +184,8 @@
         position: absolute;
         top: 0;
         right: 25%;
-        transform: translateY(-140%) rotate(-15deg);
-        width: 150px;
+        transform: translateY(-140%);
+        width: 180px;
     }
 }
 
@@ -195,13 +195,13 @@
 
     .hello-tags-image {
         position: absolute;
-        top: 100%;
+        top: 105%;
         right: 0;
-        width: 250px;
+        width: 200px;
 
         @include tablet {
             right: 25%;
-            width: 320px;
+            width: 200px;
         }
     }
 }

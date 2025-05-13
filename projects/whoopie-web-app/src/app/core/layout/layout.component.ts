@@ -3,24 +3,19 @@ import {
   Component,
   inject
 } from '@angular/core';
-import { ContactComponent } from '../../pages/home/contact/contact.component';
-import { HomeComponent } from '../../pages/home/home/home.component';
-import { ValuesComponent } from '../../pages/home/values/values.component';
 import { HeaderComponent } from '../header/header.component';
 import { ActiveSectionHandlerService } from '../services/active-section-handler.service';
 import { LayoutGsapAnimationsService } from './animations/layout-gsap-animations-service';
-import { AboutComponent } from '../../pages/home/about/about.component';
+import { HomePageComponent } from '../../pages/home-page/home-page.component';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-layout',
   standalone: true,
   imports: [
-    HomeComponent,
     HeaderComponent,
-    AboutComponent,
-    ContactComponent,
-    ValuesComponent,
+    RouterOutlet
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',

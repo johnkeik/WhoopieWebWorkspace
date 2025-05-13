@@ -146,14 +146,17 @@
 
 
     .image-container {
-        width: 250px;
+        width: 360px;
         height: 250px;
-        background-color: var(--light-background);
         z-index: 2;
         position: relative;
 
         img {
-            width: 100%;
+            width: 80%;
+            @include tablet {
+                width: 95%;
+                
+            }
         }
 
         @include tablet {
@@ -167,7 +170,7 @@
     .image-frame {
         width: 250px;
         height: 250px;
-        border: 1px solid var(--light-text);
+        // border: 1px solid var(--light-text);
         position: absolute;
         top: calc(50% + 25px);
         left: calc(50% + 35px);
@@ -216,7 +219,7 @@
 
     .vector-primary-1 {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: -10%;
 
         @include tablet {

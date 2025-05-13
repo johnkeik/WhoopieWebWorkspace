@@ -12,6 +12,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TranslocoService } from '@jsverse/transloco';
 import { HamburgerComponent } from '../../shared/hamburger/hamburger.component';
 import { CookieService } from '../services/cookie-service';
+import { Router } from '@angular/router';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -28,6 +29,7 @@ export class HeaderComponent implements AfterContentInit {
   activeSerctionHandlerService = inject(ActiveSectionHandlerService);
   translocoService = inject(TranslocoService);
   cookieService = inject(CookieService);
+  router = inject(Router);
 
   isNavbarVisible = true;
   private previousScrollPosition = window.scrollY;
@@ -73,21 +75,29 @@ export class HeaderComponent implements AfterContentInit {
   }
 
   setActive(page: string) {
-    this.visibleMenu = false;
-    document.body.style.overflow = '';
-    document.documentElement.style.overflow = ''; 
-    if (page === 'services')
+    if(page === 'blog'){
+      this.router.navigate(['blog']);
+      window.scrollTo(0, 0);
       this.activeSerctionHandlerService.setActiveSection(page);
-    const el = document.getElementById(page);
-    if (el) {
-      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
-      const pinOffset = this.getPinOffset(el);
-      const scrollPosition = elementPosition - pinOffset;
-      gsap.to(window, {
-        scrollTo: { y: scrollPosition, autoKill: false },
-        duration: 0,
-      });
+    } else {
+      this.router.navigate(['']);
+      this.visibleMenu = false;
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = ''; 
+      if (page === 'services')
+        this.activeSerctionHandlerService.setActiveSection(page);
+      const el = document.getElementById(page);
+      if (el) {
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+        const pinOffset = this.getPinOffset(el);
+        const scrollPosition = elementPosition - pinOffset;
+        gsap.to(window, {
+          scrollTo: { y: scrollPosition, autoKill: false },
+          duration: 0,
+        });
+      }
     }
+    
   }
 
   getPinOffset(el: HTMLElement): number {
