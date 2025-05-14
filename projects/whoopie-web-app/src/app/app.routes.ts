@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { CommunityComponent } from './pages/community/community.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 export const routes: Routes = [
     {
@@ -18,4 +19,8 @@ export const routes: Routes = [
             }
         ]
     },
+    {
+        path: 'admin',
+        component: AdminComponent
+    }
 ];

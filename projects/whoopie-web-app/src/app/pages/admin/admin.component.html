@@ -1,0 +1,96 @@
+<div class="admin-container">
+  <div class="decorative-circle top-right"></div>
+  <div class="decorative-circle bottom-left"></div>
+  
+  <header class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <p class="subtitle">Manage your content and settings</p>
+    <button (click)="getPosts()">Get Posts</button>
+    <button class="admin-button" (click)="uploadPost()">Upload Sample Post</button>
+  </header>
+  
+  @if (showLoginForm()) {
+    <div class="login-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <h2>Login to Access Admin Panel</h2>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            id="email" 
+            type="email" 
+            formControlName="email" 
+            placeholder="Enter your email"
+            [class.is-invalid]="emailControl?.invalid && emailControl?.touched"
+          >
+          @if (emailError) {
+            <div class="error-message">{{ emailError }}</div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+            id="password" 
+            type="password" 
+            formControlName="password" 
+            placeholder="Enter your password"
+            [class.is-invalid]="passwordControl?.invalid && passwordControl?.touched"
+          >
+          @if (passwordError) {
+            <div class="error-message">{{ passwordError }}</div>
+          }
+        </div>
+
+        @if (errorMessage()) {
+          <div class="login-error">
+            {{ errorMessage() }}
+          </div>
+        }
+
+        <button 
+          type="submit" 
+          class="login-button"
+          [disabled]="loginForm.invalid || isLoading()"
+        >
+          @if (isLoading()) {
+            <span class="loader"></span>
+          } @else {
+            Login
+          }
+        </button>
+      </form>
+    </div>
+  }
+
+  @if (showContent()) {
+    <div class="admin-content">
+      <div class="welcome-message">
+        <h2>Welcome to the Admin Panel!</h2>
+        <p>You now have access to manage your content.</p>
+      </div>
+      
+      <div class="admin-panel">
+        <div class="admin-card">
+          <h3>Blog Posts</h3>
+          <p>Manage your blog posts and articles</p>
+          <button class="admin-button">Manage Posts</button>
+        </div>
+        
+        <div class="admin-card">
+          <h3>User Management</h3>
+          <p>Manage user accounts and permissions</p>
+          <button class="admin-button">Manage Users</button>
+        </div>
+        
+        <div class="admin-card">
+          <h3>Settings</h3>
+          <p>Configure application settings</p>
+          <button class="admin-button">Open Settings</button>
+        </div>
+      </div>
+      
+      <button class="logout-button" (click)="logout()">Logout</button>
+    </div>
+  }
+</div>

@@ -5,6 +5,7 @@ import { LoadingHandComponent } from './shared/loading-hand/loading-hand.compone
 import { gsap } from 'gsap';
 import { TranslocoService } from '@jsverse/transloco';
 import { CookieService } from './core/services/cookie-service';
+import { FirebaseService } from './core/services/firebase.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent {
   translocoService = inject(TranslocoService);
   cookieService = inject(CookieService)
   loadingTransloco = true;
-
+  firebaseService = inject(FirebaseService);
   constructor() {
     this.initCursorListeners();
     const lang_cookie = this.cookieService.getCookie('lang')
@@ -29,6 +30,12 @@ export class AppComponent {
     this.translocoService.selectTranslateObject('home').subscribe(() => {
       this.loadingTransloco = false;
     });
+
+    // this.firebaseService.getFirestoreData('blogPosts').subscribe((data) => {
+    //   console.log('Firestore data:', data);
+    // });
+
+
 
   }
 
