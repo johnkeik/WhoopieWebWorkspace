@@ -11,23 +11,16 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { getAuth, provideAuth } from '@angular/fire/auth'; // Add this import
+import environment from './environments/environment';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAIWE3BFITS-cuE0aB4t0hZaFHGthSSRlU",
-  authDomain: "whoopiewebapp.firebaseapp.com",
-  projectId: "whoopiewebapp",
-  storageBucket: "whoopiewebapp.firebasestorage.app",
-  messagingSenderId: "237439699594",
-  appId: "1:237439699594:web:a7802e691bbb6cb7193b73",
-  measurementId: "G-XM3ZEZ536Z",
-};
+
 
 const firebaseProviders = [
-  provideFirebaseApp(() => initializeApp(firebaseConfig)),
+  provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
   provideFirestore(() => getFirestore()),
   provideDatabase(() => getDatabase()),
   provideAuth(() => getAuth()), // Add Auth provider
-  { provide: FIREBASE_OPTIONS, useValue: firebaseConfig } // For compatibility with AngularFire compat
+  { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig} // For compatibility with AngularFire compat
 ];
 
 export const appConfig: ApplicationConfig = {
